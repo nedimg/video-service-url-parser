@@ -28,8 +28,8 @@
 //	https://vimeo.com/channels/staffpicks/138706287
 //	https://vimeo.com/138706287
 //	https://player.vimeo.com/video/138706287
-
-	exports.parse = function(url) {
+	
+	var _parse = function(url) {
 				
 		var id = '';
 		var service = '';
@@ -99,4 +99,6 @@
 		};
 	};
 
-}(typeof exports === 'object' && exports || this));
+	exports.parse = _parse;
+
+}(exports && typeof exports === 'object' ? exports : this['ParseVideoServiceUrl'] = {}));
