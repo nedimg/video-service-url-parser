@@ -143,14 +143,50 @@ exports['parse'] = {
 				service: 'dailymotion', 
 				videoId: 'x31olaa'
 			},
+			{	url: "https://vimeo.com/channels/staffpicks/138706287",
+				service: 'vimeo', 
+				videoId: '138706287'
+			},
+			{	url: "https://vimeo.com/channels/staffpicks/138706287?t=123&foo=bar",
+				service: 'vimeo', 
+				videoId: '138706287'
+			},
+			{	url: "https://vimeo.com/channels/staffpicks/138706287?&foo=bar",
+				service: 'vimeo', 
+				videoId: '138706287'
+			},
+			{	url: "https://vimeo.com/138706287",
+				service: 'vimeo', 
+				videoId: '138706287'
+			},
+			{	url: "https://vimeo.com/138706287?t=123&foo=bar",
+				service: 'vimeo', 
+				videoId: '138706287'
+			},
+			{	url: "https://vimeo.com/138706287?&foo=bar",
+				service: 'vimeo', 
+				videoId: '138706287'
+			},
+			{	url: "https://player.vimeo.com/video/138706287",
+				service: 'vimeo', 
+				videoId: '138706287'
+			},
+			{	url: "https://player.vimeo.com/video/138706287?t=123&foo=bar",
+				service: 'vimeo', 
+				videoId: '138706287'
+			},
+			{	url: "https://player.vimeo.com/video/138706287?&foo=bar",
+				service: 'vimeo', 
+				videoId: '138706287'
+			},
 		];
 
 		for (var i = 0; i < test_cases.length; i++) {
 
 			var obj = parser.parse(test_cases[i].url);
 
-			test.equal(obj.service, test_cases[i].service, "should be " + test_cases[i].service);
-			test.equal(obj.videoId, test_cases[i].videoId, "should be " + test_cases[i].videoId);
+			test.equal(obj.service, test_cases[i].service, "should be " + test_cases[i].service + ". Url: " + test_cases[i].url);
+			test.equal(obj.videoId, test_cases[i].videoId, "should be " + test_cases[i].videoId + ". Url: " + test_cases[i].url);
 		}
 		
 		test.done();
