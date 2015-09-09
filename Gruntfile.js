@@ -38,6 +38,11 @@ module.exports = function(grunt) {
       options: {
         jshintrc: '.jshintrc'
       },
+      ignore_warning: {
+          options: {
+            '-W044': true,
+          },
+      },
       gruntfile: {
         src: 'Gruntfile.js'
       },

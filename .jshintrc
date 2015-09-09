@@ -1,14 +1,15 @@
 {
+  "boss": true,
+  "browser": true,
   "curly": true,
   "eqeqeq": true,
+  "eqnull": true,
   "immed": true,
   "latedef": true,
   "newcap": true,
   "noarg": true,
+  "node": true,
   "sub": true,
   "undef": true,
-  "unused": true,
-  "boss": true,
-  "eqnull": true,
-  "node": true
+  "unused": true
 }
