@@ -5,6 +5,10 @@
 
 	'use strict';
 
+	var youtube = 'youtube';
+	var dailymotion = 'dailymotion';
+	var vimeo = 'vimeo';
+
 	var youtubeRegex1 = /https?:\/\/(www\.)?youtube\.com\/watch.*/i;
 	var youtubeRegex2 = /https?:\/\/(www\.)?youtu\.be\/(.+)(\?.*)?/i;
 	var youtubeRegex3 = /https?:\/\/(www\.)?youtube\.com\/embed\/(.+)(\?.*)?/i;
@@ -34,55 +38,55 @@
 		if (youtubeRegex1.test(url) === true) {
 			
 			id = url.split('v=')[1];
-			service = 'youtube';
+			service = youtube;
 			
 		} else if (youtubeRegex2.test(url) === true) {
 			
 			groups = youtubeRegex2.exec(url);
 			id = groups[2];
-			service = 'youtube';
+			service = youtube;
 			
 		} else if (youtubeRegex3.test(url) === true) {
 			
 			groups = youtubeRegex3.exec(url);
 			id = groups[2];
-			service = 'youtube';
+			service = youtube;
 			
 		} else if (dailymotionRegex1.test(url) === true) {
 			
 			groups = dailymotionRegex1.exec(url);
 			id = groups[2];
-			service = 'dailymotion';
+			service = dailymotion;
 			
 		} else if (dailymotionRegex2.test(url) === true) {
 			
 			groups = dailymotionRegex2.exec(url);
 			id = groups[2];
-			service = 'dailymotion';
+			service = dailymotion;
 			
 		} else if (dailymotionRegex3.test(url) === true) {
 			
 			groups = dailymotionRegex3.exec(url);
 			id = groups[2];
-			service = 'dailymotion';
+			service = dailymotion;
 
 		} else if (vimeoRegex1.test(url) === true) {
 			
 			groups = vimeoRegex1.exec(url);
 			id = groups[2];
-			service = 'vimeo';
+			service = vimeo;
 			
 		} else if (vimeoRegex2.test(url) === true) {
 			
 			groups = vimeoRegex2.exec(url);
 			id = groups[2];
-			service = 'vimeo';
+			service = vimeo;
 			
 		} else if (vimeoRegex3.test(url) === true) {
 			
 			groups = vimeoRegex3.exec(url);
 			id = groups[2];
-			service = 'vimeo';
+			service = vimeo;
 		}
 		
 		var pos = id.indexOf('?');
