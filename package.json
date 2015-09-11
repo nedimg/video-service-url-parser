@@ -1,7 +1,7 @@
 {
   "name": "video-service-url-parser",
   "description": "Video Service URL Parser",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "homepage": "https://github.com/thiagoh/video-service-url-parser",
   "author": {
     "name": "Thiago Andrade",
