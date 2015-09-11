@@ -1,5 +1,8 @@
 # video-service-url-parser
 
+FIXME
+exports strategy not working
+
 Video Service URL Parser
 
 ## Getting Started
