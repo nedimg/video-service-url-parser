@@ -1,5 +1,8 @@
 # video-service-url-parser
 
+FIXME
+exports strategy not working
+
 Video Service URL Parser
 
 ## Getting Started
@@ -8,7 +11,13 @@ Install the module with: `npm install video-service-url-parser`
 
 ```javascript
 var video_service_url_parser = require('video-service-url-parser');
-video_service_url_parser.awesome(); // "awesome"
+/*
+  {
+    service: 'youtube',
+    videoId: 'uFHIEynduqM'
+  }
+*/
+video_service_url_parser.parse("https://www.youtube.com/watch?v=uFHIEynduqM"); 
 ```
 
 ### In the browser
@@ -22,7 +31,13 @@ In your web page:
 ```html
 <script src="dist/video-service-url-parser.min.js"></script>
 <script>
-awesome(); // "awesome"
+/*
+  {
+    service: 'youtube',
+    videoId: 'uFHIEynduqM'
+  }
+*/
+.parse("https://www.youtube.com/watch?v=uFHIEynduqM"); 
 </script>
 ```
 
@@ -34,7 +49,13 @@ var exports = Bocoup.utils;
 </script>
 <script src="dist/video-service-url-parser.min.js"></script>
 <script>
-Bocoup.utils.awesome(); // "awesome"
+/*
+  {
+    service: 'youtube',
+    videoId: 'uFHIEynduqM'
+  }
+*/
+Bocoup.utils.parse();
 </script>
 ```
 
