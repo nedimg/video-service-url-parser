@@ -1,7 +1,11 @@
-/*! video-service-url-parser - v0.1.1 - 2015-09-09
-* https://github.com/thiagoh/video-service-url-parser
-* Copyright (c) 2015 Thiago Andrade; Licensed MIT */
-(function(exports) {
+/*! 
+ * video-service-url-parser - v0.1.2 - 2015-09-11
+ * https://github.com/thiagoh/video-service-url-parser 
+ * 
+ * Copyright (c) 2015 Thiago Andrade;
+ * Licensed under the MIT license 
+ */
+(function() {
 
 	'use strict';
 
@@ -99,6 +103,19 @@
 		};
 	};
 
-	exports.parse = _parse;
-
-}(exports && typeof exports === 'object' ? exports : this['ParseVideoServiceUrl'] = {}));
+	// Establish the root object, `window` in the browser, or `exports` on the server.
+	var root = this;
+	
+	// Export the Underscore object for **Node.js**, with
+	// backwards-compatibility for the old `require()` API. If we're in
+	// the browser, add `VideoServiceUrlParser` as a global function.
+	if (typeof exports !== 'undefined') {
+		if (typeof module !== 'undefined' && module.exports) {
+			exports = module.exports = _parse;
+		}
+		exports.parse = _parse;
+	} else {
+		root['VideoServiceUrlParser'] = _parse;
+	}
+	
+}.call(this));
