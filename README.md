@@ -44,9 +44,6 @@ In your web page:
 In your code, you can attach video-service-url-parser's methods to any object.
 
 ```html
-<script>
-var exports = Bocoup.utils;
-</script>
 <script src="dist/video-service-url-parser.min.js"></script>
 <script>
 /*
@@ -55,7 +52,7 @@ var exports = Bocoup.utils;
     videoId: 'uFHIEynduqM'
   }
 */
-Bocoup.utils.parse();
+VideoServiceUrlParser('http://www.youtube.com/watch?v=uFHIEynduqM');
 </script>
 ```
 
@@ -63,7 +60,27 @@ Bocoup.utils.parse();
 _(Coming soon)_
 
 ## Examples
-_(Coming soon)_
+<script>
+/*
+  {
+    service: 'youtube',
+    videoId: 'uFHIEynduqM'
+  }
+*/
+VideoServiceUrlParser('http://www.youtube.com/watch?v=uFHIEynduqM');
+VideoServiceUrlParser('http://youtu.be/uFHIEynduqM&foo=bar&fooz=barz');
+VideoServiceUrlParser('http://youtube.com/watch?v=uFHIEynduqM&foo=bar&fooz=barz');
+VideoServiceUrlParser('http://www.youtube.com/embed/uFHIEynduqM&foo=bar&fooz=barz');
+
+/*
+  {
+    service: 'vimeo',
+    videoId: '43233380'
+  }
+*/
+VideoServiceUrlParser('http://vimeo.com/43233380');
+VideoServiceUrlParser('https://www.vimeo.com/43233380?foo=bar&fooz=barz');
+</script>
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
