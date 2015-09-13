@@ -37,7 +37,7 @@ In your web page:
     videoId: 'uFHIEynduqM'
   }
 */
-.parse("https://www.youtube.com/watch?v=uFHIEynduqM"); 
+VideoServiceUrlParser("https://www.youtube.com/watch?v=uFHIEynduqM"); 
 </script>
 ```
 
