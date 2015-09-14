@@ -87,9 +87,6 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 _Also, please don't edit files in the "dist" subdirectory as they are generated via Grunt. You'll find source code in the "lib" subdirectory!_
 
-## Release History
-_(Nothing yet)_
-
 ## License
 Copyright (c) 2015 Thiago Andrade  
 Licensed under the MIT license.
