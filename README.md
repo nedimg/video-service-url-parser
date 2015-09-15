@@ -60,6 +60,7 @@ VideoServiceUrlParser('http://www.youtube.com/watch?v=uFHIEynduqM');
 _(Coming soon)_
 
 ## Examples
+```html
 <script>
 /*
   {
@@ -81,6 +82,7 @@ VideoServiceUrlParser('http://www.youtube.com/embed/uFHIEynduqM&foo=bar&fooz=bar
 VideoServiceUrlParser('http://vimeo.com/43233380');
 VideoServiceUrlParser('https://www.vimeo.com/43233380?foo=bar&fooz=barz');
 </script>
+```
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
