@@ -35,8 +35,8 @@
 	
 	var _parse = function(url) {
 				
-		var id = '';
-		var service = '';
+		var id;
+		var service;
 		var groups;
 
 		if (youtubeRegex1.test(url) === true) {

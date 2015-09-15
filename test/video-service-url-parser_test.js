@@ -27,6 +27,19 @@ exports['parse'] = {
 		// setup here
 		done();
 	},
+	boundaries_test: function(test) {
+
+		test.equal(parser.parse(), undefined, "Should be undefined");
+		test.equal(parser.parse(null), undefined, "Should be undefined");
+		test.equal(parser.parse(1), undefined, "Should be undefined");
+		test.equal(parser.parse(0), undefined, "Should be undefined");
+		test.equal(parser.parse(-1), undefined, "Should be undefined");
+		test.equal(parser.parse(''), undefined, "Should be undefined");
+		test.equal(parser.parse(' '), undefined, "Should be undefined");
+		test.equal(parser.parse('_yNe_WPM9sM'), undefined, "Should be undefined");
+		
+		test.done();
+	},
 	known_services_test: function(test) {
 
 		var test_cases = [
@@ -346,98 +359,93 @@ exports['parse'] = {
 		
 		test.done();
 	},
-
 	unknown_services_test: function(test) {
 
 		var test_cases = [
-			"https://www.youtube.com/watch?v=_yNe_WPM9sM"
-			"https://www.youtube.com/watch?v=_yNe_WPM9sM&feature=youtu.be&aef"
-			"https://youtu.be/_yNe_WPM9sM"
-			"https://youtu.be/_yNe_WPM9sM?t=16"
-			"https://www.youtube.com/embed/_yNe_WPM9sM"
-			"https://www.youtube.com/embed/_yNe_WPM9sM?t=123"
-			"http://www.youtube.com/watch?v=_yNe_WPM9sM"
-			"http://www.youtube.com/watch?v=_yNe_WPM9sM&feature=youtu.be&aef"
-			"http://youtu.be/_yNe_WPM9sM"
-			"http://youtu.be/_yNe_WPM9sM?t=16"
-			"http://www.youtube.com/embed/_yNe_WPM9sM?t=123"
-			"https://www.youtube.com/watch?t1=42142&t2=aefaeaepofjaef apeofj aepfoa&v=_yNe_WPM9sM"
-			"https://www.youtube.com/watch?t1=42142&t2=aefaeaepofjaef apeofj aepfoa&v=_yNe_WPM9sM&feature=youtu.be&aef"
-			"https://youtu.be/_yNe_WPM9sM"
-			"https://youtu.be/_yNe_WPM9sM?t=16"
-			"https://www.youtube.com/embed/_yNe_WPM9sM"
-			"https://www.youtube.com/embed/_yNe_WPM9sM?t=123"
-			"http://www.youtube.com/watch?t1=42142&t2=aefaeaepofjaef apeofj aepfoa&v=_yNe_WPM9sM"
-			"http://www.youtube.com/watch?t1=42142&t2=aefaeaepofjaef apeofj aepfoa&v=_yNe_WPM9sM&feature=youtu.be&aef"
-			"http://youtu.be/_yNe_WPM9sM"
-			"http://youtu.be/_yNe_WPM9sM?t=16"
-			"http://www.youtube.com/embed/_yNe_WPM9sM?t=123"
-			"http://www.dailymotion.com/video/x31olaa_"
-			"http://www.dailymotion.com/video/x31olaa_melhores-pegadinhas-2-anos-de-nao-e-serio_fun"
-			"http://dai.ly/x31olaa"
-			"http://dai.ly/x31olaa_melhores-pegadinhas-2-anos-de-nao-e-serio_fun"
-			"http://www.dailymotion.com/embed/video/x31olaa"
-			"http://www.dailymotion.com/embed/video/x31olaa_melhores-pegadinhas-2-anos-de-nao-e-serio_fun"
-			"https://vimeo.com/channels/staffpicks/138706287"
-			"https://vimeo.com/channels/staffpicks/138706287?t=123&foo=bar"
-			"https://vimeo.com/channels/staffpicks/138706287?&foo=bar"
-			"https://vimeo.com/138706287"
-			"https://vimeo.com/138706287?t=123&foo=bar"
-			"https://vimeo.com/138706287?&foo=bar"
-			"https://player.vimeo.com/video/138706287"
-			"https://player.vimeo.com/video/138706287?t=123&foo=bar"
-			"https://player.vimeo.com/video/138706287?&foo=bar"
-
-
-
-
-
-			"www.youtube.com/watch?v=_yNe_WPM9sM"
-			"www.youtube.com/watch?v=_yNe_WPM9sM&feature=youtu.be&aef"
-			"youtu.be/_yNe_WPM9sM"
-			"youtu.be/_yNe_WPM9sM?t=16"
-			"www.youtube.com/embed/_yNe_WPM9sM"
-			"www.youtube.com/embed/_yNe_WPM9sM?t=123"
-			"http://www.youtube.com/watch?v=_yNe_WPM9sM"
-			"http://www.youtube.com/watch?v=_yNe_WPM9sM&feature=youtu.be&aef"
-			"http://youtu.be/_yNe_WPM9sM"
-			"http://youtu.be/_yNe_WPM9sM?t=16"
-			"http://www.youtube.com/embed/_yNe_WPM9sM?t=123"
-			"www.youtube.com/watch?t1=42142&t2=aefaeaepofjaef apeofj aepfoa&v=_yNe_WPM9sM"
-			"www.youtube.com/watch?t1=42142&t2=aefaeaepofjaef apeofj aepfoa&v=_yNe_WPM9sM&feature=youtu.be&aef"
-			"youtu.be/_yNe_WPM9sM"
-			"youtu.be/_yNe_WPM9sM?t=16"
-			"www.youtube.com/embed/_yNe_WPM9sM"
-			"www.youtube.com/embed/_yNe_WPM9sM?t=123"
-			"http://www.youtube.com/watch?t1=42142&t2=aefaeaepofjaef apeofj aepfoa&v=_yNe_WPM9sM"
-			"http://www.youtube.com/watch?t1=42142&t2=aefaeaepofjaef apeofj aepfoa&v=_yNe_WPM9sM&feature=youtu.be&aef"
-			"http://youtu.be/_yNe_WPM9sM"
-			"http://youtu.be/_yNe_WPM9sM?t=16"
-			"http://www.youtube.com/embed/_yNe_WPM9sM?t=123"
-			"http://www.dailymotion.com/video/x31olaa_"
-			"http://www.dailymotion.com/video/x31olaa_melhores-pegadinhas-2-anos-de-nao-e-serio_fun"
-			"http://dai.ly/x31olaa"
-			"http://dai.ly/x31olaa_melhores-pegadinhas-2-anos-de-nao-e-serio_fun"
-			"http://www.dailymotion.com/embed/video/x31olaa"
-			"http://www.dailymotion.com/embed/video/x31olaa_melhores-pegadinhas-2-anos-de-nao-e-serio_fun"
-			"vimeo.com/channels/staffpicks/138706287"
-			"vimeo.com/channels/staffpicks/138706287?t=123&foo=bar"
-			"vimeo.com/channels/staffpicks/138706287?&foo=bar"
-			"vimeo.com/138706287"
-			"vimeo.com/138706287?t=123&foo=bar"
-			"vimeo.com/138706287?&foo=bar"
-			"player.vimeo.com/video/138706287"
-			"player.vimeo.com/video/138706287?t=123&foo=bar"
-			"player.vimeo.com/video/138706287?&foo=bar"
+			"https://www.youtubex.com/watch?v=_yNe_WPM9sM",
+			"https://www.youtubex.com/watch?v=_yNe_WPM9sM&feature=youtu.be&aef",
+			"https://youtu.bex/_yNe_WPM9sM",
+			"https://youtu.bex/_yNe_WPM9sM?t=16",
+			"https://www.youtubex.com/embed/_yNe_WPM9sM",
+			"https://www.youtubex.com/embed/_yNe_WPM9sM?t=123",
+			"http://www.youtubex.com/watch?v=_yNe_WPM9sM",
+			"http://www.youtubex.com/watch?v=_yNe_WPM9sM&feature=youtu.bex&aef",
+			"http://youtu.bex/_yNe_WPM9sM",
+			"http://youtu.bex/_yNe_WPM9sM?t=16",
+			"http://www.youtubex.com/embed/_yNe_WPM9sM?t=123",
+			"https://www.youtubex.com/watch?t1=42142&t2=aefaeaepofjaef apeofj aepfoa&v=_yNe_WPM9sM",
+			"https://www.youtubex.com/watch?t1=42142&t2=aefaeaepofjaef apeofj aepfoa&v=_yNe_WPM9sM&feature=youtu.bex&aef",
+			"https://youtu.bex/_yNe_WPM9sM",
+			"https://youtu.bex/_yNe_WPM9sM?t=16",
+			"https://www.youtubex.com/embed/_yNe_WPM9sM",
+			"https://www.youtubex.com/embed/_yNe_WPM9sM?t=123",
+			"http://www.youtubex.com/watch?t1=42142&t2=aefaeaepofjaef apeofj aepfoa&v=_yNe_WPM9sM",
+			"http://www.youtubex.com/watch?t1=42142&t2=aefaeaepofjaef apeofj aepfoa&v=_yNe_WPM9sM&feature=youtu.bex&aef",
+			"http://youtu.bex/_yNe_WPM9sM",
+			"http://youtu.bex/_yNe_WPM9sM?t=16",
+			"http://www.youtubex.com/embed/_yNe_WPM9sM?t=123",
+			"http://www.dailymotionx.com/video/x31olaa_",
+			"http://www.dailymotionx.com/video/x31olaa_melhores-pegadinhas-2-anos-de-nao-e-serio_fun",
+			"http://dai.lyx/x31olaa",
+			"http://dai.lyx/x31olaa_melhores-pegadinhas-2-anos-de-nao-e-serio_fun",
+			"http://www.dailymotionx.com/embed/video/x31olaa",
+			"http://www.dailymotionx.com/embed/video/x31olaa_melhores-pegadinhas-2-anos-de-nao-e-serio_fun",
+			"https://vimeox.com/channels/staffpicks/138706287",
+			"https://vimeox.com/channels/staffpicks/138706287?t=123&foo=bar",
+			"https://vimeox.com/channels/staffpicks/138706287?&foo=bar",
+			"https://vimeox.com/138706287",
+			"https://vimeox.com/138706287?t=123&foo=bar",
+			"https://vimeox.com/138706287?&foo=bar",
+			"https://player.vimeox.com/video/138706287",
+			"https://player.vimeox.com/video/138706287?t=123&foo=bar",
+			"https://player.vimeox.com/video/138706287?&foo=bar",
+			"www.youtubex.com/watch?v=_yNe_WPM9sM",
+			"www.youtubex.com/watch?v=_yNe_WPM9sM&feature=youtu.bex&aef",
+			"youtu.bex/_yNe_WPM9sM",
+			"youtu.bex/_yNe_WPM9sM?t=16",
+			"www.youtubex.com/embed/_yNe_WPM9sM",
+			"www.youtubex.com/embed/_yNe_WPM9sM?t=123",
+			"http://www.youtubex.com/watch?v=_yNe_WPM9sM",
+			"http://www.youtubex.com/watch?v=_yNe_WPM9sM&feature=youtu.bex&aef",
+			"http://youtu.bex/_yNe_WPM9sM",
+			"http://youtu.bex/_yNe_WPM9sM?t=16",
+			"http://www.youtubex.com/embed/_yNe_WPM9sM?t=123",
+			"www.youtubex.com/watch?t1=42142&t2=aefaeaepofjaef apeofj aepfoa&v=_yNe_WPM9sM",
+			"www.youtubex.com/watch?t1=42142&t2=aefaeaepofjaef apeofj aepfoa&v=_yNe_WPM9sM&feature=youtu.bex&aef",
+			"youtu.bex/_yNe_WPM9sM",
+			"youtu.bex/_yNe_WPM9sM?t=16",
+			"www.youtubex.com/embed/_yNe_WPM9sM",
+			"www.youtubex.com/embed/_yNe_WPM9sM?t=123",
+			"http://www.youtubex.com/watch?t1=42142&t2=aefaeaepofjaef apeofj aepfoa&v=_yNe_WPM9sM",
+			"http://www.youtubex.com/watch?t1=42142&t2=aefaeaepofjaef apeofj aepfoa&v=_yNe_WPM9sM&feature=youtu.bex&aef",
+			"http://youtu.bex/_yNe_WPM9sM",
+			"http://youtu.bex/_yNe_WPM9sM?t=16",
+			"http://www.youtubex.com/embed/_yNe_WPM9sM?t=123",
+			"http://www.dailymotionx.com/video/x31olaa_",
+			"http://www.dailymotionx.com/video/x31olaa_melhores-pegadinhas-2-anos-de-nao-e-serio_fun",
+			"http://dai.lyx/x31olaa",
+			"http://dai.lyx/x31olaa_melhores-pegadinhas-2-anos-de-nao-e-serio_fun",
+			"http://www.dailymotionx.com/embed/video/x31olaa",
+			"http://www.dailymotionx.com/embed/video/x31olaa_melhores-pegadinhas-2-anos-de-nao-e-serio_fun",
+			"vimeox.com/channels/staffpicks/138706287",
+			"vimeox.com/channels/staffpicks/138706287?t=123&foo=bar",
+			"vimeox.com/channels/staffpicks/138706287?&foo=bar",
+			"vimeox.com/138706287",
+			"vimeox.com/138706287?t=123&foo=bar",
+			"vimeox.com/138706287?&foo=bar",
+			"player.vimeox.com/video/138706287",
+			"player.vimeox.com/video/138706287?t=123&foo=bar",
+			"player.vimeox.com/video/138706287?&foo=bar",
 		];
 
 		//test.expect(1);
+		//test.equal(1, undefined, "Error");
 
 		for (var i = 0; i < test_cases.length; i++) {
 
-			var obj = parser.parse(test_cases[i].url);
+			var obj = parser.parse(test_cases[i]);
 
-			test.equal(obj, undefined, "Url: '" + test_cases[i].url + "'' service's does not exist");
+			test.equal(obj, undefined, "Url: '" + test_cases[i] + "'' service's does not exist");
 		}
 		
 		test.done();

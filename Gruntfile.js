@@ -32,7 +32,11 @@ module.exports = function(grunt) {
       },
     },
     nodeunit: {
-      files: ['test/**/*_test.js']
+      files: ['test/**/*_test.js'],
+      options: {
+        reporter: 'verbose'
+        //reporterOutput: 'tests.log',
+      }
     },
     jshint: {
       options: {
