@@ -1,5 +1,5 @@
 /*! 
- * video-service-url-parser - v0.1.4 - 2015-09-11
+ * video-service-url-parser - v0.1.4 - 2015-09-15
  * https://github.com/thiagoh/video-service-url-parser 
  * 
  * Copyright (c) 2015 Thiago Andrade;
@@ -13,22 +13,22 @@
 	var dailymotion = 'dailymotion';
 	var vimeo = 'vimeo';
 
-	var youtubeRegex1 = /https?:\/\/(www\.)?youtube\.com\/watch.*/i;
-	var youtubeRegex2 = /https?:\/\/(www\.)?youtu\.be\/(.+)(\?.*)?/i;
-	var youtubeRegex3 = /https?:\/\/(www\.)?youtube\.com\/embed\/(.+)(\?.*)?/i;
+	var youtubeRegex1 = /(https?:\/\/)?(www\.)?youtube\.com\/watch.*/i;
+	var youtubeRegex2 = /(https?:\/\/)?(www\.)?youtu\.be\/(.+)(\?.*)?/i;
+	var youtubeRegex3 = /(https?:\/\/)?(www\.)?youtube\.com\/embed\/(.+)(\?.*)?/i;
 	
-	var dailymotionRegex1 = /https?:\/\/(www\.)?dailymotion\.com\/video\/([^_]+)_?.*/i;
-	var dailymotionRegex2 = /https?:\/\/(www\.)?dai\.ly\/([^_]+)(\?.*)?/i;
-	var dailymotionRegex3 = /https?:\/\/(www\.)?dailymotion\.com\/embed\/video\/([^_]+)(\?.*)?/i;
+	var dailymotionRegex1 = /(https?:\/\/)?(www\.)?dailymotion\.com\/video\/([^_]+)_?.*/i;
+	var dailymotionRegex2 = /(https?:\/\/)?(www\.)?dai\.ly\/([^_]+)(\?.*)?/i;
+	var dailymotionRegex3 = /(https?:\/\/)?(www\.)?dailymotion\.com\/embed\/video\/([^_]+)(\?.*)?/i;
 
 //	http://www.dailymotion.com/video/x31olaa_
 //	http://dai.ly/x31olaa
 //	http://www.dailymotion.com/embed/video/x31olaa
 
-	var vimeoRegex1 = /https?:\/\/(www\.)?vimeo.com\/channels\/.+\/(.+)(\?.*)?/i;
-	var vimeoRegex2 = /https?:\/\/(www\.)?vimeo\.com\/(.+)(\?.*)?/i;
-	var vimeoRegex3 = /https?:\/\/(www\.)?player\.vimeo\.com\/video\/(.+)(\?.*)?/i;
-	
+	var vimeoRegex1 = /(https?:\/\/)?(www\.)?vimeo.com\/channels\/.+\/(.+)(\?.*)?/i;
+	var vimeoRegex2 = /(https?:\/\/)?(www\.)?player\.vimeo\.com\/video\/(.+)(\?.*)?/i;
+	var vimeoRegex3 = /(https?:\/\/)?(www\.)?vimeo\.com\/(.+)(\?.*)?/i;
+
 //	https://vimeo.com/channels/staffpicks/138706287
 //	https://vimeo.com/138706287
 //	https://player.vimeo.com/video/138706287
@@ -47,50 +47,54 @@
 		} else if (youtubeRegex2.test(url) === true) {
 			
 			groups = youtubeRegex2.exec(url);
-			id = groups[2];
+			id = groups[3];
 			service = youtube;
 			
 		} else if (youtubeRegex3.test(url) === true) {
 			
 			groups = youtubeRegex3.exec(url);
-			id = groups[2];
+			id = groups[3];
 			service = youtube;
 			
 		} else if (dailymotionRegex1.test(url) === true) {
 			
 			groups = dailymotionRegex1.exec(url);
-			id = groups[2];
+			id = groups[3];
 			service = dailymotion;
 			
 		} else if (dailymotionRegex2.test(url) === true) {
 			
 			groups = dailymotionRegex2.exec(url);
-			id = groups[2];
+			id = groups[3];
 			service = dailymotion;
 			
 		} else if (dailymotionRegex3.test(url) === true) {
 			
 			groups = dailymotionRegex3.exec(url);
-			id = groups[2];
+			id = groups[3];
 			service = dailymotion;
 
 		} else if (vimeoRegex1.test(url) === true) {
 			
 			groups = vimeoRegex1.exec(url);
-			id = groups[2];
+			id = groups[3];
 			service = vimeo;
 			
 		} else if (vimeoRegex2.test(url) === true) {
 			
 			groups = vimeoRegex2.exec(url);
-			id = groups[2];
+			id = groups[3];
 			service = vimeo;
 			
 		} else if (vimeoRegex3.test(url) === true) {
 			
 			groups = vimeoRegex3.exec(url);
-			id = groups[2];
+			id = groups[3];
 			service = vimeo;
+		}
+
+		if (typeof id === 'undefined') {
+			return;
 		}
 		
 		var pos = id.indexOf('?');

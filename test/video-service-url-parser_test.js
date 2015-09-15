@@ -339,8 +339,8 @@ exports['parse'] = {
 			var obj = parser.parse(test_cases[i].url);
 
 			test.notEqual(obj, undefined, "Url: '" + test_cases[i].url + "'' leads to undefined service");
-			test.equal(obj.service, test_cases[i].service, "should be " + test_cases[i].service + ". Url: '" + test_cases[i].url + "'");
-			test.equal(obj.videoId, test_cases[i].videoId, "should be " + test_cases[i].videoId + ". Url: '" + test_cases[i].url + "'");
+			test.equal(obj.service, test_cases[i].service, "Value should be " + test_cases[i].service + ". Url: '" + test_cases[i].url + "'");
+			test.equal(obj.videoId, test_cases[i].videoId, "Value should be " + test_cases[i].videoId + ". Url: '" + test_cases[i].url + "'");
 		}
 		
 		test.done();
