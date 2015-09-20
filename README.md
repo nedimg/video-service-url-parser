@@ -56,10 +56,7 @@ VideoServiceUrlParser('http://www.youtube.com/watch?v=uFHIEynduqM');
 </script>
 ```
 
-## Documentation
-_(Coming soon)_
-
-## Examples
+## Usage
 ```html
 <script>
 /*
