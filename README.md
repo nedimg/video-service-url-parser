@@ -1,4 +1,9 @@
-# video-service-url-parser
+# Video Services URL Parser
+
+### Supports
+- YouTube
+- Dailymotion
+- Vimeo
 
 FIXME
 exports strategy not working
