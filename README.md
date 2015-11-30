@@ -1,3 +1,8 @@
+[![view on npm](http://img.shields.io/npm/v/video-service-url-parser.svg)](https://www.npmjs.org/package/video-service-url-parser)
+[![npm module downloads](https://img.shields.io/npm/dt/video-service-url-parser.svg)](https://www.npmjs.org/package/video-service-url-parser)
+[![github downloads](https://img.shields.io/github/downloads/thiagoh/video-service-url-parser/total.svg)](https://github.com/thiagoh/video-service-url-parser)
+
+<a name="module_video-service-url-parservideo-service-url-parser"></a>
 # Video Services URL Parser
 
 ### Supports
