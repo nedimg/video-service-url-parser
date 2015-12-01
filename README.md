@@ -1,6 +1,8 @@
 [![view on npm](http://img.shields.io/npm/v/video-service-url-parser.svg)](https://www.npmjs.org/package/video-service-url-parser)
+[![view on github](https://img.shields.io/node/v/video-service-url-parser.svg)](https://github.com/thiagoh/video-service-url-parser)
+[![npm](https://img.shields.io/npm/l/video-service-url-parser.svg?style=flat-square)](https://www.npmjs.org/package/video-service-url-parser)
 [![npm module downloads](https://img.shields.io/npm/dt/video-service-url-parser.svg)](https://www.npmjs.org/package/video-service-url-parser)
-[![github downloads](https://img.shields.io/github/downloads/thiagoh/video-service-url-parser/total.svg)](https://github.com/thiagoh/video-service-url-parser)
+[![GitHub stars](https://img.shields.io/github/stars/badges/video-service-url-parser.svg?style=social&label=Star)]()
 
 <a name="module_video-service-url-parservideo-service-url-parser"></a>
 # Video Services URL Parser
