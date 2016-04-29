@@ -15,12 +15,7 @@
   "bugs": {
     "url": "https://github.com/thiagoh/video-service-url-parser/issues"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/thiagoh/video-service-url-parser/blob/master/LICENSE-MIT"
-    }
-  ],
+  "license": "MIT",
   "main": "lib/video-service-url-parser",
   "engines": {
     "node": ">= 0.10.0"
