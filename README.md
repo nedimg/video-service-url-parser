@@ -1,3 +1,4 @@
+[![](https://img.shields.io/travis/thiagoh/video-service-url-parser.svg)]((https://github.com/thiagoh/video-service-url-parser/releases/latest))
 [![view on npm](http://img.shields.io/npm/v/video-service-url-parser.svg)](https://www.npmjs.org/package/video-service-url-parser)
 [![view on github](https://img.shields.io/node/v/video-service-url-parser.svg)](https://github.com/thiagoh/video-service-url-parser)
 [![npm](https://img.shields.io/npm/l/video-service-url-parser.svg?style=flat-square)](https://www.npmjs.org/package/video-service-url-parser)
