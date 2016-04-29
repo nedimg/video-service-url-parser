@@ -1,8 +1,8 @@
 /*! 
- * video-service-url-parser - v0.1.6 - 2015-12-01
+ * video-service-url-parser - v0.1.6 - 2016-04-29
  * https://github.com/thiagoh/video-service-url-parser 
  * 
- * Copyright (c) 2015 Thiago Andrade;
+ * Copyright (c) 2016 Thiago Andrade;
  * Licensed under the MIT license 
  */
 (function(exports) {
