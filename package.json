@@ -1,7 +1,7 @@
 {
   "name": "video-service-url-parser",
   "description": "Video Service URL Parser",
-  "version": "0.1.6",
+  "version": "1.0.0",
   "homepage": "https://github.com/thiagoh/video-service-url-parser",
   "author": {
     "name": "Thiago Andrade",
@@ -15,10 +15,12 @@
   "bugs": {
     "url": "https://github.com/thiagoh/video-service-url-parser/issues"
   },
-  "licenses": [{
-    "type": "MIT",
-    "url": "https://github.com/thiagoh/video-service-url-parser/blob/master/LICENSE-MIT"
-  }],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/thiagoh/video-service-url-parser/blob/master/LICENSE-MIT"
+    }
+  ],
   "main": "lib/video-service-url-parser",
   "engines": {
     "node": ">= 0.10.0"
